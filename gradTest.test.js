@@ -20,15 +20,21 @@ describe("menu Data Generator", () => {
         "parent4"
       ];
 
+      // const expectedResult = [
+      //   {
+      //     title: "parent1",
+      //     data: ["parent1child", "parent1child2", "parent1child3"]
+      //   },
+      //   { title: "parent2", data: ["parent2child", "parent2child2"] },
+      //   { title: "parent3", data: ["parent3child1"] }
+      // ];
+
+      #
       const expectedResult = [
         {
-          title: "parent1",
-          data: ["parent1child", "parent1child2", "parent1child3"]
-        },
-        { title: "parent2", data: ["parent2child", "parent2child2"] },
-        { title: "parent3", data: ["parent3child1"] }
+          title: "parent1"
+        }
       ];
-
       const actualResult = createMenuData(data);
       expect(actualResult).toMatchObject(expectedResult);
     });
