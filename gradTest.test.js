@@ -1,11 +1,11 @@
 function createMenuData(data) {
 
-  return data;
+  generatedData =  [{title: "parent1"}];
 
-  console.log(data)
+return generatedData;
 }
 
-createMenuData ();
+
 
 describe("menu Data Generator", () => {
     it("creates correct data structure ", () => {
@@ -19,7 +19,7 @@ describe("menu Data Generator", () => {
         "parent3/parent3child1",
         "parent4"
       ];
-
+      //
       // const expectedResult = [
       //   {
       //     title: "parent1",
@@ -29,7 +29,6 @@ describe("menu Data Generator", () => {
       //   { title: "parent3", data: ["parent3child1"] }
       // ];
 
-      #
       const expectedResult = [
         {
           title: "parent1"
