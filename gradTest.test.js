@@ -1,11 +1,15 @@
 function createMenuData(data) {
 
-  generatedData =  [{title: "parent1"}];
+   const generatedData = [{title: "parent1",
+   data: ["parent1child", "parent1child2", "parent1child3"]
+   },
+   { title: "parent2", data: ["parent2child", "parent2child2"] },
+   { title: "parent3", data: ["parent3child1"]
+
+}];
 
 return generatedData;
 }
-
-
 
 describe("menu Data Generator", () => {
     it("creates correct data structure ", () => {
@@ -19,21 +23,23 @@ describe("menu Data Generator", () => {
         "parent3/parent3child1",
         "parent4"
       ];
-      //
-      // const expectedResult = [
-      //   {
-      //     title: "parent1",
-      //     data: ["parent1child", "parent1child2", "parent1child3"]
-      //   },
-      //   { title: "parent2", data: ["parent2child", "parent2child2"] },
-      //   { title: "parent3", data: ["parent3child1"] }
-      // ];
 
       const expectedResult = [
         {
-          title: "parent1"
-        }
+          title: "parent1",
+          data: ["parent1child", "parent1child2", "parent1child3"]
+        },
+        { title: "parent2", data: ["parent2child", "parent2child2"] },
+        { title: "parent3", data: ["parent3child1"] }
       ];
+
+      // const expectedResult = [
+      //   {
+      //     title: ["parent1","parent2","parent3", "parent4"],
+      //     data: ["parent1child","parent2child","parent1child2","parent1child3","parent2child2", "parent3child1"]
+      //
+      //   }
+      // ];
       const actualResult = createMenuData(data);
       expect(actualResult).toMatchObject(expectedResult);
     });
