@@ -1,46 +1,38 @@
 function createMenuData(data) {
+  const generatedData = [
+    {
+      title: "parent1",
+      data: ["parent1child", "parent1child2", "parent1child3"]
+    },
+    { title: "parent2", data: ["parent2child", "parent2child2"] },
+    { title: "parent3", data: ["parent3child1"] }
+  ];
 
-   const generatedData = [{title: "parent1",
-   data: ["parent1child", "parent1child2", "parent1child3"]
-   },
-   { title: "parent2", data: ["parent2child", "parent2child2"] },
-   { title: "parent3", data: ["parent3child1"]
-
-}];
-
-return generatedData;
+  return generatedData;
 }
 
 describe("menu Data Generator", () => {
-    it("creates correct data structure ", () => {
-      const data = [
-        "parent1/parent1child",
-        "parent1/parent1child2",
-        "parent2/parent2child",
-        "parent2/parent2child2",
-        "parent1/parent1child3",
-        "parent3",
-        "parent3/parent3child1",
-        "parent4"
-      ];
+  it("creates correct data structure ", () => {
+    const data = [
+      "parent1/parent1child",
+      "parent1/parent1child2",
+      "parent2/parent2child",
+      "parent2/parent2child2",
+      "parent1/parent1child3",
+      "parent3",
+      "parent3/parent3child1",
+      "parent4"
+    ];
 
-      const expectedResult = [
-        {
-          title: "parent1",
-          data: ["parent1child", "parent1child2", "parent1child3"]
-        },
-        { title: "parent2", data: ["parent2child", "parent2child2"] },
-        { title: "parent3", data: ["parent3child1"] }
-      ];
-
-      // const expectedResult = [
-      //   {
-      //     title: ["parent1","parent2","parent3", "parent4"],
-      //     data: ["parent1child","parent2child","parent1child2","parent1child3","parent2child2", "parent3child1"]
-      //
-      //   }
-      // ];
-      const actualResult = createMenuData(data);
-      expect(actualResult).toMatchObject(expectedResult);
-    });
+    const expectedResult = [
+      {
+        title: "parent1",
+        data: ["parent1child", "parent1child2", "parent1child3"]
+      },
+      { title: "parent2", data: ["parent2child", "parent2child2"] },
+      { title: "parent3", data: ["parent3child1"] }
+    ];
+    const actualResult = createMenuData(data);
+    expect(actualResult).toMatchObject(expectedResult);
   });
+});
